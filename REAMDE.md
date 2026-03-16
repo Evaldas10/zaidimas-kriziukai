@@ -34,29 +34,7 @@ The project was created as part of learning exercises, so some parts of the code
 
 
 
-\## 📁 Project Structure
 
-
-
-project/
-
-│
-
-├── manage.py
-
-├── kriziukai/          # Django project settings
-
-└── app/                # Main application
-
-├── views.py
-
-├── urls.py
-
-├── templates/
-
-│     └── zaidimas.html
-
-└── static/
 
 └── style.css
 
