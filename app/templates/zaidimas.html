@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kryžiukai Nuliukai</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+
+</head>
+<body class="main">
+
+<h2 class="name">Kryžiukai  Nuliukai</h2>
+
+<table class="table">
+    {% for eil in lenta %}
+        <tr>
+            {% for lang in eil %}
+                <td>
+                    {% if not zaidimas_baigtas and lang == "" %}
+                        <a href="?eil={{ forloop.parentloop.counter0 }}&stulp={{ forloop.counter0 }}">
+                            {{ lang }}
+                        </a>
+                    {% else %}
+                        {{ lang }}
+                    {% endif %}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{% if laimetojas %}
+    <div class="winner">
+        {% if laimetojas == "Lygiosios" %}
+            Lygiosios!
+        {% else %}
+            Laimėjo: {{ laimetojas }}
+        {% endif %}
+    </div>
+{% endif %}
+
+<br>
+<a href="?naujas=1" class="button">Pradėti iš naujo</a>
+
+</body>
+</html>
